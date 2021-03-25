@@ -30,3 +30,4 @@ print(arr17)
 print(arr17.shape)
 print(arr17.reshape(2, 6))
 print(arr17)
+
