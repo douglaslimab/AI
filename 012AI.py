@@ -1,0 +1,15 @@
+import numpy as np
+
+null_matrix = np.zeros((2, 3))
+ones_matrix = np.ones((3, 3))
+full_matrix = np.full((2, 2), 7)
+rand_matrix = np.random.rand(4, 2)
+randint_matrix = np.random.randint(3, 7, size = (1, 2))
+identity_matrix = np.identity(5)
+print(null_matrix)
+print(ones_matrix)
+print(full_matrix)
+print(rand_matrix)
+print(np.random.random_sample(null_matrix.shape))
+print(randint_matrix)
+print(identity_matrix)
