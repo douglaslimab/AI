@@ -2,62 +2,30 @@ import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 
-pro_state = []
-covid_data = []
-deaths_data = []
+ce_data = []
+am_data = []
+sp_data = []
+rj_data = []
+pb_data = []
+ba_data = []
+se_data = []
+al_data = []
+pi_data = []
+
+ce_out = []
+am_out = []
+sp_out = []
+rj_out = []
+pb_out = []
+ba_out = []
+se_out = []
+al_out = []
+pi_out = []
+
 x_label_out = []
+
 covid_files = [
 
-"04-01-2020.csv",
-"04-02-2020.csv",
-"04-03-2020.csv",
-"04-04-2020.csv",
-"04-05-2020.csv",
-"04-06-2020.csv",
-"04-07-2020.csv",
-"04-08-2020.csv",
-"04-09-2020.csv",
-"04-10-2020.csv",
-"04-11-2020.csv",
-"04-12-2020.csv",
-"04-13-2020.csv",
-"04-14-2020.csv",
-"04-15-2020.csv",
-"04-16-2020.csv",
-"04-17-2020.csv",
-"04-18-2020.csv",
-"04-19-2020.csv",
-"04-20-2020.csv",
-"04-21-2020.csv",
-"04-22-2020.csv",
-"04-23-2020.csv",
-"04-24-2020.csv",
-"04-25-2020.csv",
-"04-26-2020.csv",
-"04-27-2020.csv",
-"04-28-2020.csv",
-"04-29-2020.csv",
-"04-30-2020.csv",
-"05-01-2020.csv",
-"05-02-2020.csv",
-"05-03-2020.csv",
-"05-04-2020.csv",
-"05-05-2020.csv",
-"05-06-2020.csv",
-"05-07-2020.csv",
-"05-08-2020.csv",
-"05-09-2020.csv",
-"05-10-2020.csv",
-"05-11-2020.csv",
-"05-12-2020.csv",
-"05-13-2020.csv",
-"05-14-2020.csv",
-"05-15-2020.csv",
-"05-16-2020.csv",
-"05-17-2020.csv",
-"05-18-2020.csv",
-"05-19-2020.csv",
-"05-20-2020.csv",
 "05-21-2020.csv",
 "05-22-2020.csv",
 "05-23-2020.csv",
@@ -384,20 +352,63 @@ covid_files = [
 
 for pointer in covid_files:
     df = pd.read_csv(pointer)
-    csv_data = np.array(df[['Province_State','Confirmed','Deaths','Active']])
-#    print(df[df['Province_State'] == 'Ceara'])
-    covid_data.append(csv_data[46])
-print(covid_data)
+    ce_line = np.array(df[df['Province_State'] == 'Ceara'])                 #   put all of these strings in a list and get the lines using 'for' loop
+    am_line = np.array(df[df['Province_State'] == 'Maranhao'])
+    sp_line = np.array(df[df['Province_State'] == 'Rio Grande do Norte'])
+    rj_line = np.array(df[df['Province_State'] == 'Paraiba'])
+    pb_line = np.array(df[df['Province_State'] == 'Pernambuco'])
+    ba_line = np.array(df[df['Province_State'] == 'Bahia'])
+    se_line = np.array(df[df['Province_State'] == 'Sergipe'])
+    al_line = np.array(df[df['Province_State'] == 'Alagoas'])
+    pi_line = np.array(df[df['Province_State'] == 'Piaui'])
+    ce_data.append(ce_line)                                                 #   put the lines in an only one data frame
+    am_data.append(am_line)
+    sp_data.append(sp_line)
+    rj_data.append(rj_line)
+    pb_data.append(pb_line)
+    ba_data.append(ba_line)
+    se_data.append(se_line)
+    al_data.append(al_line)
+    pi_data.append(pi_line)
 
-for deaths_pointer in range(len(covid_data)):
-    deaths_data.append(covid_data[deaths_pointer][2])
-print(deaths_data)
+for pointer in range(len(ce_data)):
+    ce_out.append(ce_data[pointer][0][7])
 
-for i in range(len(covid_files)):
-    x_label_out.append(covid_files[i][:2])
+for pointer in range(len(am_data)):
+    am_out.append(am_data[pointer][0][7])
+
+for pointer in range(len(sp_data)):
+    sp_out.append(sp_data[pointer][0][7])
+
+for pointer in range(len(rj_data)):
+    rj_out.append(rj_data[pointer][0][7])
+
+for pointer in range(len(pb_data)):
+    pb_out.append(pb_data[pointer][0][7])
+
+for pointer in range(len(ba_data)):
+    ba_out.append(ba_data[pointer][0][7])
+
+for pointer in range(len(se_data)):
+    se_out.append(se_data[pointer][0][7])
+
+for pointer in range(len(al_data)):
+    al_out.append(al_data[pointer][0][7])
+
+for pointer in range(len(pi_data)):
+    pi_out.append(pi_data[pointer][0][7])
+
+plt.plot(ce_out)
+plt.plot(am_out)
+plt.plot(sp_out)
+plt.plot(rj_out)
+plt.plot(pb_out)
+plt.plot(ba_out)
+plt.plot(se_out)
+plt.plot(al_out)
+plt.plot(pi_out)
 
 print(x_label_out)
-
-plt.plot(deaths_data)
-plt.xticks(x_label_out)
+plt.legend(['Ceará', 'Maranhão', 'Rio Grande do Norte', 'Paraíba', 'Pernambuco', 'Bahia', 'Sergipe', 'Alagoas', 'Piauí'])
+plt.xticks(np.arange(0,330,30))
 plt.show()
