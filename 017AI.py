@@ -348,7 +348,12 @@ covid_files = [
                "04-04-2021.csv",
                "04-05-2021.csv",
                "04-06-2021.csv",
-               "04-07-2021.csv"]
+               "04-07-2021.csv",
+               "04-08-2021.csv",
+               "04-09-2021.csv",
+               "04-10-2021.csv",
+               "04-11-2021.csv",
+               "04-12-2021.csv"]
 
 for pointer in covid_files:
     df = pd.read_csv(pointer)
@@ -372,31 +377,31 @@ for pointer in covid_files:
     pi_data.append(pi_line)
 
 for pointer in range(len(ce_data)):
-    ce_out.append(ce_data[pointer][0][7])
+    ce_out.append(ce_data[pointer][0][8])
 
 for pointer in range(len(am_data)):
-    am_out.append(am_data[pointer][0][7])
+    am_out.append(am_data[pointer][0][8])
 
 for pointer in range(len(sp_data)):
-    sp_out.append(sp_data[pointer][0][7])
+    sp_out.append(sp_data[pointer][0][8])
 
 for pointer in range(len(rj_data)):
-    rj_out.append(rj_data[pointer][0][7])
+    rj_out.append(rj_data[pointer][0][8])
 
 for pointer in range(len(pb_data)):
-    pb_out.append(pb_data[pointer][0][7])
+    pb_out.append(pb_data[pointer][0][8])
 
 for pointer in range(len(ba_data)):
-    ba_out.append(ba_data[pointer][0][7])
+    ba_out.append(ba_data[pointer][0][8])
 
 for pointer in range(len(se_data)):
-    se_out.append(se_data[pointer][0][7])
+    se_out.append(se_data[pointer][0][8])
 
 for pointer in range(len(al_data)):
-    al_out.append(al_data[pointer][0][7])
+    al_out.append(al_data[pointer][0][8])
 
 for pointer in range(len(pi_data)):
-    pi_out.append(pi_data[pointer][0][7])
+    pi_out.append(pi_data[pointer][0][8])
 
 plt.plot(ce_out)
 plt.plot(am_out)
