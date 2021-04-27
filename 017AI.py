@@ -361,7 +361,13 @@ covid_files = [
                "04-17-2021.csv",
                "04-18-2021.csv",
                "04-19-2021.csv",
-               "04-20-2021.csv"]
+               "04-20-2021.csv",
+               "04-21-2021.csv",
+               "04-22-2021.csv",
+               "04-23-2021.csv",
+               "04-24-2021.csv",
+               "04-25-2021.csv",
+               "04-26-2021.csv"]
 
 for pointer in covid_files:
     df = pd.read_csv(pointer)
@@ -423,5 +429,5 @@ plt.plot(pi_out)
 
 print(x_label_out)
 plt.legend(['Ceará', 'Maranhão', 'Rio Grande do Norte', 'Paraíba', 'Pernambuco', 'Bahia', 'Sergipe', 'Alagoas', 'Piauí'])
-plt.xticks(np.arange(0,330,30))
+plt.xticks(np.arange(0,390,30))
 plt.show()
