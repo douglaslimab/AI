@@ -2,27 +2,36 @@ import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 
+x_label_out = []
+index = 8
+
 ce_data = []
-am_data = []
-sp_data = []
-rj_data = []
+ma_data = []
+rn_data = []
+pr_data = []
 pb_data = []
 ba_data = []
 se_data = []
 al_data = []
 pi_data = []
+sp_data = []
+rj_data = []
+mg_data = []
+es_data = []
 
 ce_out = []
-am_out = []
-sp_out = []
-rj_out = []
+ma_out = []
+rn_out = []
+pr_out = []
 pb_out = []
 ba_out = []
 se_out = []
 al_out = []
 pi_out = []
-
-x_label_out = []
+sp_out = []
+rj_out = []
+mg_out = []
+es_out = []
 
 covid_files = [
 
@@ -372,62 +381,98 @@ covid_files = [
 for pointer in covid_files:
     df = pd.read_csv(pointer)
     ce_line = np.array(df[df['Province_State'] == 'Ceara'])                 #   put all of these strings in a list and get the lines using 'for' loop
-    am_line = np.array(df[df['Province_State'] == 'Maranhao'])
-    sp_line = np.array(df[df['Province_State'] == 'Rio Grande do Norte'])
-    rj_line = np.array(df[df['Province_State'] == 'Paraiba'])
+    ma_line = np.array(df[df['Province_State'] == 'Maranhao'])
+    rn_line = np.array(df[df['Province_State'] == 'Rio Grande do Norte'])
+    pr_line = np.array(df[df['Province_State'] == 'Paraiba'])
     pb_line = np.array(df[df['Province_State'] == 'Pernambuco'])
     ba_line = np.array(df[df['Province_State'] == 'Bahia'])
     se_line = np.array(df[df['Province_State'] == 'Sergipe'])
     al_line = np.array(df[df['Province_State'] == 'Alagoas'])
     pi_line = np.array(df[df['Province_State'] == 'Piaui'])
+    sp_line = np.array(df[df['Province_State'] == 'Sao Paulo'])
+    rj_line = np.array(df[df['Province_State'] == 'Rio de Janeiro'])
+    mg_line = np.array(df[df['Province_State'] == 'Minas Gerais'])
+    es_line = np.array(df[df['Province_State'] == 'Espirito Santo'])
     ce_data.append(ce_line)                                                 #   put the lines in an only one data frame
-    am_data.append(am_line)
-    sp_data.append(sp_line)
-    rj_data.append(rj_line)
+    ma_data.append(ma_line)
+    rn_data.append(rn_line)
+    pr_data.append(pr_line)
     pb_data.append(pb_line)
     ba_data.append(ba_line)
     se_data.append(se_line)
     al_data.append(al_line)
     pi_data.append(pi_line)
+    sp_data.append(sp_line)
+    rj_data.append(rj_line)
+    mg_data.append(mg_line)
+    es_data.append(es_line)
 
 for pointer in range(len(ce_data)):
-    ce_out.append(ce_data[pointer][0][8])
+    ce_out.append(ce_data[pointer][0][index])
 
-for pointer in range(len(am_data)):
-    am_out.append(am_data[pointer][0][8])
+for pointer in range(len(ma_data)):
+    ma_out.append(ma_data[pointer][0][index])
 
-for pointer in range(len(sp_data)):
-    sp_out.append(sp_data[pointer][0][8])
+for pointer in range(len(rn_data)):
+    rn_out.append(rn_data[pointer][0][index])
 
-for pointer in range(len(rj_data)):
-    rj_out.append(rj_data[pointer][0][8])
+for pointer in range(len(pr_data)):
+    pr_out.append(pr_data[pointer][0][index])
 
 for pointer in range(len(pb_data)):
-    pb_out.append(pb_data[pointer][0][8])
+    pb_out.append(pb_data[pointer][0][index])
 
 for pointer in range(len(ba_data)):
-    ba_out.append(ba_data[pointer][0][8])
+    ba_out.append(ba_data[pointer][0][index])
 
 for pointer in range(len(se_data)):
-    se_out.append(se_data[pointer][0][8])
+    se_out.append(se_data[pointer][0][index])
 
 for pointer in range(len(al_data)):
-    al_out.append(al_data[pointer][0][8])
+    al_out.append(al_data[pointer][0][index])
 
 for pointer in range(len(pi_data)):
-    pi_out.append(pi_data[pointer][0][8])
+    pi_out.append(pi_data[pointer][0][index])
+
+for pointer in range(len(sp_data)):
+    sp_out.append(sp_data[pointer][0][index])
+
+for pointer in range(len(rj_data)):
+    rj_out.append(rj_data[pointer][0][index])
+
+for pointer in range(len(mg_data)):
+    mg_out.append(mg_data[pointer][0][index])
+
+for pointer in range(len(es_data)):
+    es_out.append(es_data[pointer][0][index])
 
 plt.plot(ce_out)
-plt.plot(am_out)
-plt.plot(sp_out)
-plt.plot(rj_out)
+plt.plot(ma_out)
+plt.plot(rn_out)
+plt.plot(pr_out)
 plt.plot(pb_out)
 plt.plot(ba_out)
 plt.plot(se_out)
 plt.plot(al_out)
 plt.plot(pi_out)
+plt.plot(sp_out)
+plt.plot(rj_out)
+plt.plot(mg_out)
+plt.plot(es_out)
 
 print(x_label_out)
-plt.legend(['Ceará', 'Maranhão', 'Rio Grande do Norte', 'Paraíba', 'Pernambuco', 'Bahia', 'Sergipe', 'Alagoas', 'Piauí'])
+plt.legend(['Ceará',
+            'Maranhão',
+            'Rio Grande do Norte',
+            'Paraíba', 'Pernambuco',
+            'Bahia',
+            'Sergipe',
+            'Alagoas',
+            'Piauí',
+            'São Paulo',
+            'Rio de Janeiro',
+            'Minas Gerais',
+            'Espirito Santo'])
+
 plt.xticks(np.arange(0,390,30))
 plt.show()
