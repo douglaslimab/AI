@@ -3,7 +3,7 @@ import pandas as pd
 from matplotlib import pyplot as plt
 
 x_label_out = []
-index = 8
+index = 10
 
 ce_data = []
 ma_data = []
@@ -377,7 +377,8 @@ covid_files = [
                "04-24-2021.csv",
                "04-25-2021.csv",
                "04-26-2021.csv",
-               "04-27-2021.csv"]
+               "04-27-2021.csv",
+               "04-28-2021.csv"]
 
 for pointer in covid_files:
     df = pd.read_csv(pointer)
