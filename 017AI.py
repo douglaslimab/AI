@@ -380,9 +380,7 @@ covid_files = [
                "04-27-2021.csv",
                "04-28-2021.csv",
                "04-29-2021.csv",
-               "04-30-2021.csv",
-               "05-01-2021.csv",
-               "05-02-2021.csv"]
+               "04-30-2021.csv"]
 
 for pointer in covid_files:
     df = pd.read_csv(pointer)
