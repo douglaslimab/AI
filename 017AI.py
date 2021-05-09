@@ -3,7 +3,7 @@ import pandas as pd
 from matplotlib import pyplot as plt
 
 x_label_out = []
-index = 8
+index = 7
 
 ce_data = []
 ma_data = []
@@ -384,7 +384,11 @@ covid_files = [
                "05-01-2021.csv",
                "05-02-2021.csv",
                "05-03-2021.csv",
-               "05-04-2021.csv"]
+               "05-04-2021.csv",
+               "05-05-2021.csv",
+               "05-06-2021.csv",
+               "05-07-2021.csv",
+               "05-08-2021.csv"]
 
 for pointer in covid_files:
     df = pd.read_csv(pointer)
@@ -456,31 +460,33 @@ for pointer in range(len(es_data)):
 
 plt.plot(ce_out)
 plt.plot(ma_out)
-plt.plot(rn_out)
-plt.plot(pr_out)
+#plt.plot(rn_out)
+#plt.plot(pr_out)
 plt.plot(pb_out)
 plt.plot(ba_out)
-plt.plot(se_out)
-plt.plot(al_out)
-plt.plot(pi_out)
-plt.plot(sp_out)
-plt.plot(rj_out)
-plt.plot(mg_out)
-plt.plot(es_out)
+#plt.plot(se_out)
+#plt.plot(al_out)
+#plt.plot(pi_out)
+#plt.plot(sp_out)
+#plt.plot(rj_out)
+#plt.plot(mg_out)
+#plt.plot(es_out)
 
 print(x_label_out)
 plt.legend(['Ceará',
             'Maranhão',
-            'Rio Grande do Norte',
-            'Paraíba', 'Pernambuco',
+#            'Rio Grande do Norte',
+#            'Paraíba',
+            'Pernambuco',
             'Bahia',
-            'Sergipe',
-            'Alagoas',
-            'Piauí',
-            'São Paulo',
-            'Rio de Janeiro',
-            'Minas Gerais',
-            'Espirito Santo'])
+#            'Sergipe',
+#            'Alagoas',
+#            'Piauí',
+#            'São Paulo',
+#            'Rio de Janeiro',
+#            'Minas Gerais',
+#            'Espirito Santo'
+            ])
 
 plt.xticks(np.arange(0,390,30))
 plt.show()
