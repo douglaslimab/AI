@@ -388,7 +388,8 @@ covid_files = [
                "05-05-2021.csv",
                "05-06-2021.csv",
                "05-07-2021.csv",
-               "05-08-2021.csv"]
+               "05-08-2021.csv",
+               "05-09-2021.csv"]
 
 for pointer in covid_files:
     df = pd.read_csv(pointer)
